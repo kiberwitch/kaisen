@@ -1,0 +1,80 @@
+@use '../abstracts' as *;
+
+.overview {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: -12px;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+  padding: 14px 28px;
+  @include surface-card(6px);
+
+  @include below(md) {
+    height: auto;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 3px;
+    width: 300px;
+
+    @include below(xl) {
+      width: auto;
+    }
+  }
+
+  &__value {
+    @include text(17px, 700, 1.45, $color-white);
+
+    &--ok {
+      color: $color-green;
+    }
+  }
+
+  &__label {
+    @include text(10px, 400, 1.45, $color-muted);
+  }
+}
+
+.features {
+  display: flex;
+  gap: 10px;
+
+  @include below(md) {
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    flex: 1 1 0;
+    min-width: 0;
+    height: 74px;
+    padding: 12px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    @include surface-card(6px);
+
+    @include below(md) {
+      flex-basis: calc(50% - 10px);
+    }
+  }
+
+  &__num {
+    font: 700 10px/1.5 $font-body;
+    letter-spacing: 2px;
+    color: $color-red;
+  }
+
+  &__name {
+    @include text(11px, 600, 1.5);
+  }
+}

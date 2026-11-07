@@ -1,0 +1,101 @@
+@use '../abstracts' as *;
+
+.site-footer {
+  background: $color-bg;
+
+  &__inner {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 240px 240px 174px;
+    height: 200px;
+    border-top: 1px solid $color-line;
+
+    @include below(lg) {
+      grid-template-columns: 1fr 1fr;
+      height: auto;
+      padding: 32px 0 24px;
+      gap: 24px;
+    }
+  }
+
+  &__brand {
+    position: relative;
+
+    @include below(lg) {
+      grid-column: 1 / -1;
+      min-height: 140px;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    top: 17px;
+    left: -49px;
+
+    img {
+      width: 170.197px;
+      height: 47.046px;
+    }
+
+    @include below(lg) {
+      position: static;
+      display: block;
+    }
+  }
+
+  &__tagline {
+    position: absolute;
+    top: 93px;
+    left: 0;
+    @include text(11px, 400, 1.5, $color-muted);
+
+    @include below(lg) {
+      position: static;
+      margin-top: 12px;
+    }
+  }
+
+  &__copy {
+    position: absolute;
+    top: 170px;
+    left: 0;
+    @include text(10px, 400, 1.5, $color-muted);
+
+    @include below(lg) {
+      position: static;
+      margin-top: 12px;
+    }
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 31px;
+
+    @include below(lg) {
+      padding-top: 0;
+    }
+  }
+
+  &__title {
+    @include text(10px, 700, 1.5, $color-muted);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__link {
+    display: block;
+    width: max-content;
+    @include text(11px, 500, 1.5);
+    transition: color 0.15s;
+
+    &:hover {
+      color: $color-white;
+    }
+  }
+}

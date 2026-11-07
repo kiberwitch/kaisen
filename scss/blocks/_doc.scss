@@ -1,0 +1,166 @@
+@use '../abstracts' as *;
+
+.doc {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 820px);
+  gap: 32px;
+  align-items: start;
+  margin-top: 40px;
+
+  @include below(lg) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  &__aside {
+    position: sticky;
+    top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include below(lg) {
+      position: static;
+    }
+  }
+
+  &__body {
+    padding: 32px;
+    counter-reset: section;
+    @include surface-card(8px);
+
+    @include below(sm) {
+      padding: 20px;
+    }
+  }
+
+  &__meta {
+    margin-bottom: 8px;
+    @include text(12px, 500, 1.5, $color-muted);
+  }
+}
+
+.doc-nav {
+  padding: 16px;
+  @include surface-card(8px);
+
+  &__title {
+    @include text(12px, 500, 1.5, $color-muted);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 8px;
+
+    @include below(lg) {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    @include text(14px, 700, 1.4, $color-text);
+    transition: color 0.15s, border-color 0.15s, background-color 0.15s;
+
+    &:hover {
+      color: $color-white;
+    }
+
+    &[aria-current='page'] {
+      color: $color-white;
+      background: rgba(230, 57, 70, 0.1);
+      border-color: $color-red;
+    }
+  }
+}
+
+.doc-toc {
+  padding: 16px;
+  @include surface-card(8px);
+
+  @include below(lg) {
+    display: none;
+  }
+
+  &__title {
+    @include text(12px, 500, 1.5, $color-muted);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+    padding-left: 20px;
+    list-style: decimal;
+    color: $color-muted;
+    font-size: 13px;
+  }
+
+  &__link {
+    @include text(13px, 500, 1.4, $color-text);
+    transition: color 0.15s;
+
+    &:hover {
+      color: $color-white;
+    }
+  }
+}
+
+.doc-section {
+  counter-increment: section;
+  scroll-margin-top: 24px;
+
+  & + & {
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid $color-surface;
+  }
+
+  &:target &__title {
+    color: $color-red;
+  }
+
+  &__title {
+    @include heading(26px, 1.18);
+    text-transform: none;
+    transition: color 0.3s;
+
+    &::before {
+      content: counter(section) '. ';
+      color: $color-red;
+    }
+
+    @include below(sm) {
+      font-size: 22px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+    counter-reset: item;
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 48px;
+    counter-increment: item;
+    @include text(14px, 400, 1.6);
+
+    &::before {
+      content: counter(section) '.' counter(item);
+      position: absolute;
+      left: 0;
+      color: $color-muted;
+      font-weight: 700;
+    }
+  }
+}

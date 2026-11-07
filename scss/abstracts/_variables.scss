@@ -1,0 +1,37 @@
+$color-bg: #0b0e12;
+$color-surface: #1a1f26;
+$color-line: #30353d;
+$color-muted: #969ca6;
+$color-text: #c9ccd1;
+$color-white: #f2f1ee;
+$color-red: #e63946;
+$color-red-hover: #f04b58;
+$color-green: #7cc49b;
+$color-placeholder: #5b626c;
+
+$font-head: 'Oswald', 'Arial Narrow', Impact, sans-serif;
+$font-body: 'Manrope', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
+
+$container-max: 1440px;
+$gutter: 96px;
+
+$breakpoints: (
+  xl: 1200px,
+  lg: 1100px,
+  md: 900px,
+  sm: 720px,
+);
+
+$class-tints: (
+  samurai: #554040,
+  shinto: #4f4055,
+  shinobi: #404e55,
+  engineer: #554e40,
+  monk: #425540,
+);
+
+$hex-themes: (
+  'brown': (rgba(139, 111, 111, 0.32), rgba(139, 111, 111, 0.55)),
+  'red': (rgba(230, 57, 70, 0.32), #e63946),
+  'olive': (rgba(134, 122, 97, 0.32), rgba(134, 122, 97, 0.55)),
+);

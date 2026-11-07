@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KAISEN — Начать играть</title>
+  <meta name="description" content="Скачай лаунчер KAISEN для Windows, Linux или macOS и начни путешествие.">
+  <meta name="theme-color" content="#0b0e12">
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <div class="page page--play">
+    <header class="site-header">
+      <div class="container">
+        <div class="site-header__row">
+          <a class="site-header__logo" href="index.html" aria-label="KAISEN — на главную">
+            <img src="assets/brand/logo.svg" alt="KAISEN" width="170" height="47">
+          </a>
+          <nav class="site-nav" aria-label="Основная навигация">
+            <ul class="site-nav__list">
+            <li><a class="site-nav__link" href="donate.html">Донат</a></li>
+            <li><a class="site-nav__link" href="news.html">Новости</a></li>
+            <li><a class="site-nav__link" href="profile.html">Профиль</a></li>
+            </ul>
+          </nav>
+          <a class="btn btn--primary site-header__login" href="profile.html">Войти</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main" id="main">
+      <div class="container">
+        <div class="play-hero">
+          <header class="page-head page-head--play">
+            <p class="eyebrow">ЛАУНЧЕР KAISEN</p>
+            <h1 class="page-head__title">НАЧНИ СВОЁ<br>ПУТЕШЕСТВИЕ</h1>
+            <p class="page-head__lead">Один лаунчер — весь мир KAISEN.<br>Выбери свою систему и установи приложение.</p>
+          </header>
+          <div class="play-hero__preview placeholder" role="img" data-label="launcher.png · 432×270"><img class="placeholder__img" src="assets/launcher/launcher.png" alt="Скриншот лаунчера KAISEN" onerror="this.remove()"></div>
+        </div>
+
+        <ul class="downloads">
+          <li>
+            <article class="download-card">
+              <div class="download-card__head">
+                <h2 class="download-card__title">Windows</h2>
+                <img src="assets/launcher/icon-windows.png" alt="" width="45" height="45">
+              </div>
+              <p class="download-card__meta">Релиз готовится<br>Поддержка версий ОС уточняется</p>
+              <a class="btn btn--primary btn--block" href="#install">Скачать для Windows</a>
+            </article>
+          </li>
+          <li>
+            <article class="download-card">
+              <div class="download-card__head">
+                <h2 class="download-card__title">Linux</h2>
+                <img src="assets/launcher/icon-linux.png" alt="" width="45" height="45">
+              </div>
+              <p class="download-card__meta">Релиз готовится<br>Поддержка версий ОС уточняется</p>
+              <a class="btn btn--secondary btn--block" href="#install">Скачать для Linux</a>
+            </article>
+          </li>
+          <li>
+            <article class="download-card">
+              <div class="download-card__head">
+                <h2 class="download-card__title">macOS</h2>
+                <img src="assets/launcher/icon-macos.png" alt="" width="45" height="45">
+              </div>
+              <p class="download-card__meta">Релиз готовится<br>Поддержка версий ОС уточняется</p>
+              <a class="btn btn--secondary btn--block" href="#install">Скачать для macOS</a>
+            </article>
+          </li>
+        </ul>
+
+        <section class="install" id="install" aria-labelledby="install-title">
+          <h2 class="install__title" id="install-title">УСТАНОВКА</h2>
+          <ol class="steps">
+          <li class="steps__item"><span class="steps__num">01</span><span class="steps__text">Скачай лаунчер для своей системы</span></li>
+          <li class="steps__item"><span class="steps__num">02</span><span class="steps__text">Установи и запусти приложение</span></li>
+          <li class="steps__item"><span class="steps__num">03</span><span class="steps__text">Войди в аккаунт KAISEN</span></li>
+          <li class="steps__item"><span class="steps__num">04</span><span class="steps__text">Дождись загрузки игровых файлов</span></li>
+          <li class="steps__item"><span class="steps__num">05</span><span class="steps__text">Нажми «Играть»</span></li>
+          </ol>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__inner">
+          <div class="site-footer__brand">
+            <a class="site-footer__logo" href="index.html" aria-label="KAISEN — на главную">
+              <img src="assets/brand/logo.svg" alt="KAISEN" width="170" height="47">
+            </a>
+            <p class="site-footer__tagline">Minecraft MMO-RPG<br>Япония по ту сторону будущего.</p>
+            <p class="site-footer__copy">© 2026 KAISEN</p>
+          </div>
+
+          <nav class="site-footer__group" aria-labelledby="footer-project">
+            <h2 class="site-footer__title" id="footer-project">Проект</h2>
+            <ul class="site-footer__list">
+              <li><a class="site-footer__link" href="index.html">Главная</a></li>
+              <li><a class="site-footer__link" href="donate.html">Донат</a></li>
+              <li><a class="site-footer__link" href="play.html">Начать играть</a></li>
+            </ul>
+          </nav>
+
+          <nav class="site-footer__group" aria-labelledby="footer-community">
+            <h2 class="site-footer__title" id="footer-community">Сообщество</h2>
+            <ul class="site-footer__list">
+              <li><a class="site-footer__link" href="https://discord.com" target="_blank" rel="noopener noreferrer">Discord</a></li>
+              <li><a class="site-footer__link" href="rules.html">Правила</a></li>
+            </ul>
+          </nav>
+
+          <nav class="site-footer__group" aria-labelledby="footer-info">
+            <h2 class="site-footer__title" id="footer-info">Информация</h2>
+            <ul class="site-footer__list">
+              <li><a class="site-footer__link" href="privacy.html">Конфиденциальность</a></li>
+              <li><a class="site-footer__link" href="terms.html">Пользовательское соглашение</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+
+</body>
+</html>

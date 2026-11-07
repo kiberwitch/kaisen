@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+
+:root {
+  --color-bg: #{$color-bg};
+  --color-surface: #{$color-surface};
+  --color-line: #{$color-line};
+  --color-muted: #{$color-muted};
+  --color-text: #{$color-text};
+  --color-white: #{$color-white};
+  --color-red: #{$color-red};
+  --color-green: #{$color-green};
+  --font-head: #{$font-head};
+  --font-body: #{$font-body};
+}

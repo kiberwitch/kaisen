@@ -1,0 +1,164 @@
+@use 'sass:list';
+@use '../abstracts' as *;
+
+.privileges {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+  gap: 24px;
+  justify-items: center;
+  margin-top: 64px;
+
+  &__item {
+    position: relative;
+    width: 285.12px;
+    height: 364.32px;
+  }
+
+  @include above(lg) {
+    display: block;
+    position: relative;
+    height: 1040px;
+
+    &__item {
+      position: absolute;
+
+      &--1 { left: calc(50% - 142.56px); top: 7.84px; }
+      &--2 { left: 31.44px; top: 207.84px; }
+      &--3 { right: 31.44px; top: 207.84px; }
+      &--4 { left: 31.44px; top: 627.84px; }
+      &--5 { left: calc(50% - 142.56px); top: 457.84px; }
+      &--6 { right: 31.44px; top: 627.84px; }
+    }
+  }
+}
+
+$hex-clip: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+
+.hex-card {
+  --hex-tint: #{rgba(139, 111, 111, 0.32)};
+  --hex-outline: #{rgba(139, 111, 111, 0.55)};
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: center;
+  transition: transform 0.2s;
+
+  @each $name, $pair in $hex-themes {
+    &--#{$name} {
+      --hex-tint: #{list.nth($pair, 1)};
+      --hex-outline: #{list.nth($pair, 2)};
+    }
+  }
+
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-6px);
+    outline: none;
+  }
+
+  &__shape,
+  &__inner {
+    clip-path: $hex-clip;
+  }
+
+  &__shape {
+    position: absolute;
+    left: 11.52px;
+    top: 0;
+    width: 262.08px;
+    height: 315.36px;
+    background: var(--hex-outline);
+    transition: background-color 0.2s;
+  }
+
+  &:hover &__shape,
+  &:focus-visible &__shape {
+    background: $color-white;
+  }
+
+  &__inner {
+    position: absolute;
+    inset: 1px;
+    background: linear-gradient(180deg, var(--hex-tint), $color-bg);
+  }
+
+  &__art {
+    position: absolute;
+    left: 45.8px;
+    top: 27.8px;
+    width: 168.48px;
+    height: 228.65px;
+    background: transparent;
+    font-size: 10px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__fade {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 125.28px;
+    background: linear-gradient(180deg, rgba(11, 14, 18, 0), rgba(11, 14, 18, 0.98));
+  }
+
+  &__title,
+  &__more,
+  &__index {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+  }
+
+  &__title {
+    top: 233.28px;
+    width: 227.52px;
+    @include heading(19.44px, 1.18);
+  }
+
+  &__more {
+    top: 262.8px;
+    width: 188.64px;
+    @include text(8.64px, 500, 1.45);
+  }
+
+  &__index {
+    top: 340.56px;
+    width: 213.12px;
+    @include text(7.2px, 700, 1.45, $color-muted);
+  }
+}
+
+.purchase {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  margin-top: 64px;
+  padding: 32px;
+  @include surface-card(8px);
+
+  &__title {
+    @include heading(26px);
+  }
+
+  &__text {
+    @include text(13px);
+  }
+
+  &__button {
+    width: 220px;
+    height: 42px;
+    padding: 0;
+  }
+}

@@ -1,0 +1,37 @@
+@use 'sass:map';
+@use 'variables' as *;
+
+@mixin below($bp) {
+  @media (max-width: map.get($breakpoints, $bp)) {
+    @content;
+  }
+}
+
+@mixin above($bp) {
+  @media (min-width: map.get($breakpoints, $bp) + 1px) {
+    @content;
+  }
+}
+
+@mixin heading($size, $line-height: 1.16) {
+  font-family: $font-head;
+  font-weight: 700;
+  font-size: $size;
+  line-height: $line-height;
+  color: $color-white;
+  text-transform: uppercase;
+}
+
+@mixin text($size, $weight: 400, $line-height: 1.5, $color: $color-text) {
+  font-family: $font-body;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin surface-card($radius: 8px) {
+  background: $color-bg;
+  border: 1px solid $color-surface;
+  border-radius: $radius;
+}

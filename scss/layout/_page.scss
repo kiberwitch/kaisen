@@ -1,0 +1,89 @@
+@use '../abstracts' as *;
+
+.page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+  background: $color-bg;
+
+  --page-bg: none;
+  --page-bg-repeat: no-repeat;
+
+  &--home    { --page-bg: url('../assets/backgrounds/home.png'); --page-bg-repeat: repeat-y; }
+  &--donate  { --page-bg: url('../assets/backgrounds/donate.png'); }
+  &--news    { --page-bg: url('../assets/backgrounds/news.png'); }
+  &--news-post { --page-bg: url('../assets/backgrounds/news-post.png'); }
+  &--play    { --page-bg: url('../assets/backgrounds/play.png'); }
+  &--profile { --page-bg: url('../assets/backgrounds/profile.png'); }
+  &--legal   { --page-bg: url('../assets/backgrounds/legal.png'); }
+  &--rules   { --page-bg: url('../assets/backgrounds/rules.png'); }
+  &--privacy { --page-bg: url('../assets/backgrounds/privacy.png'); }
+  &--terms   { --page-bg: url('../assets/backgrounds/terms.png'); }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0 calc(50% - #{$container-max * 0.5});
+    background: var(--page-bg, none) center top / 100% auto var(--page-bg-repeat, no-repeat);
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 10%, #000 90%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 10%, #000 90%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.skip-link {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 100;
+  padding: 10px 16px;
+  background: $color-red;
+  color: $color-white;
+  font-weight: 700;
+  border-radius: 4px;
+  transform: translateY(-200%);
+
+  &:focus {
+    transform: none;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $gutter;
+
+  @include below(lg) {
+    padding: 0 40px;
+  }
+
+  @include below(sm) {
+    padding: 0 20px;
+  }
+}
+
+.main {
+  flex: 1 0 auto;
+  padding: 72px 0 64px;
+
+  &--home {
+    padding: 0 0 64px;
+  }
+
+  &--donate {
+    padding-bottom: 62px;
+  }
+
+  &--profile {
+    padding-bottom: 32px;
+  }
+}

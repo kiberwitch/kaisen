@@ -1,0 +1,8 @@
+@use '../abstracts' as *;
+
+.eyebrow {
+  font: 700 10px/1.5 $font-body;
+  letter-spacing: 2px;
+  color: $color-red;
+  text-transform: uppercase;
+}

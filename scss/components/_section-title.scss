@@ -1,0 +1,9 @@
+@use '../abstracts' as *;
+
+.section-title {
+  @include heading(44px);
+
+  @include below(md) {
+    font-size: 34px;
+  }
+}

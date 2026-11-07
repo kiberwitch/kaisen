@@ -1,0 +1,89 @@
+@use '../abstracts' as *;
+
+.hero {
+  position: relative;
+  height: 530px;
+  margin-top: 8px;
+  overflow: hidden;
+  background: $color-bg;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: $color-bg;
+    opacity: 0.2;
+    pointer-events: none;
+  }
+
+  &__art {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: $container-max;
+    max-width: none;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: translateX(-50%);
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 12%, #000 88%, transparent 100%);
+
+    @include below(md) {
+      opacity: 0.35;
+    }
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 2;
+    padding-top: 64px;
+  }
+
+  &__eyebrow {
+    white-space: pre;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 660px;
+    margin-top: 38px;
+  }
+
+  &__title {
+    @include heading(66px, 1.16);
+
+    @include below(md) {
+      font-size: 44px;
+    }
+  }
+
+  &__lead {
+    max-width: 470px;
+    @include text(15px);
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__button {
+    &--primary {
+      min-width: 210px;
+    }
+
+    &--secondary {
+      min-width: 162px;
+    }
+  }
+
+  @include below(md) {
+    height: auto;
+    padding-bottom: 48px;
+  }
+}

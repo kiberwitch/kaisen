@@ -1,0 +1,14 @@
+@use '../abstracts' as *;
+
+.link {
+  @include text(14px, 400, 1.45);
+  transition: color 0.15s;
+
+  &--accent {
+    color: $color-red;
+
+    &:hover {
+      color: $color-red-hover;
+    }
+  }
+}

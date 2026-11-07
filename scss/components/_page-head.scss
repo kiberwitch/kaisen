@@ -1,0 +1,73 @@
+@use '../abstracts' as *;
+
+.page-head {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__title {
+    @include heading(60px);
+
+    @include below(sm) {
+      font-size: 40px;
+    }
+  }
+
+  &__lead {
+    @include text(14px);
+  }
+
+  &--donate {
+    gap: 32px;
+
+    .page-head__lead {
+      font-size: 15px;
+    }
+  }
+
+  &--play {
+    flex: none;
+
+    .page-head__title {
+      white-space: nowrap;
+
+      @include below(sm) {
+        white-space: normal;
+      }
+    }
+  }
+
+  &--profile {
+    .page-head__title {
+      font-size: 54px;
+
+      @include below(sm) {
+        font-size: 40px;
+      }
+    }
+  }
+
+  &--blog {
+    gap: 8px;
+    max-width: 520px;
+
+    .page-head__title {
+      font-size: 48px;
+      line-height: 1.18;
+    }
+  }
+
+  &--doc {
+    gap: 8px;
+    max-width: 820px;
+
+    .page-head__title {
+      font-size: 48px;
+      line-height: 1.18;
+
+      @include below(sm) {
+        font-size: 30px;
+      }
+    }
+  }
+}

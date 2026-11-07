@@ -1,0 +1,240 @@
+@use '../abstracts' as *;
+
+.profile {
+  display: grid;
+  grid-template-columns: 454px 1fr;
+  gap: 16px;
+  align-items: start;
+  margin-top: 36px;
+
+  @include below(lg) {
+    grid-template-columns: 1fr;
+  }
+
+  &__aside {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include below(lg) {
+      max-width: 454px;
+    }
+  }
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  @include surface-card(8px);
+
+  &__title {
+    @include heading(24px, 1.18);
+    text-transform: none;
+  }
+
+  &__subtitle {
+    @include text(12px, 500, 1.5, $color-muted);
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__divider {
+    height: 1px;
+    background: $color-line;
+  }
+
+  &__hint {
+    @include text(12px, 500, 1.5, $color-muted);
+  }
+
+  &__skin {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  &__avatar {
+    flex: none;
+    width: 78px;
+    height: 78px;
+    background: rgba(230, 57, 70, 0.1);
+    border: 1px solid $color-red;
+    border-radius: 50%;
+  }
+
+  &__name {
+    @include heading(24px, 1.18);
+    text-transform: none;
+  }
+
+  &__role {
+    @include text(12px, 500, 1.5, $color-muted);
+  }
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
+  }
+
+  &__label {
+    @include text(12px, 500, 1.5, $color-muted);
+  }
+
+  &__value {
+    @include text(14px, 700, 1.5, $color-white);
+  }
+}
+
+.radio {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: max-content;
+  cursor: pointer;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__dot {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 15px;
+    height: 15px;
+    border: 1px solid $color-line;
+    border-radius: 50%;
+    transition: border-color 0.15s;
+
+    &::after {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: $color-red;
+      transform: scale(0);
+      transition: transform 0.15s;
+    }
+  }
+
+  &__input:checked + &__dot {
+    border-color: $color-red;
+
+    &::after {
+      transform: scale(1);
+    }
+  }
+
+  &__input:focus-visible + &__dot {
+    outline: 2px solid $color-white;
+    outline-offset: 2px;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+  }
+
+  &__title {
+    @include text(14px, 700, 1.5, $color-white);
+  }
+
+  &__desc {
+    @include text(12px, 500, 1.5, $color-muted);
+  }
+}
+
+.preview {
+  position: relative;
+  height: 620px;
+  overflow: hidden;
+  background: rgba(11, 14, 18, 0.88);
+  border: 1px solid $color-surface;
+  border-radius: 8px;
+
+  @include below(sm) {
+    height: 520px;
+  }
+
+  &__title {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    @include heading(24px, 1.18);
+    text-transform: none;
+  }
+
+  &__stage {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 56px;
+    bottom: 64px;
+  }
+
+  &__canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+  &__status {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 0 24px;
+    text-align: center;
+    pointer-events: none;
+    @include text(13px, 500, 1.5, $color-muted);
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  &__hint {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 24px;
+    text-align: center;
+    @include text(14px, 400, 1.5, $color-white);
+  }
+}

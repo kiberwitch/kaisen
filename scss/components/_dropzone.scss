@@ -1,0 +1,69 @@
+@use '../abstracts' as *;
+
+.dropzone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 142px;
+  padding: 31px 16px 16px;
+  background: $color-bg;
+  border: 1px solid $color-line;
+  border-radius: 6px;
+  transition: border-color 0.15s;
+
+  &--over {
+    border-color: $color-red;
+  }
+
+  &__title {
+    @include text(15px, 700, 1.45, $color-white);
+  }
+
+  &__or {
+    margin-top: 10px;
+    @include text(11px, 400, 1.45, $color-muted);
+  }
+
+  &__pick {
+    width: 218px;
+    height: 36px;
+    margin-top: 8px;
+  }
+
+  &__file {
+    margin-top: 8px;
+    @include text(11px, 500, 1.3);
+  }
+
+  &__error {
+    margin-top: 8px;
+    @include text(11px, 500, 1.3, $color-red-hover);
+  }
+}
+
+.model-switch {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+
+  &__label {
+    @include text(12px, 500, 1.45);
+  }
+
+  &__row {
+    display: flex;
+    gap: 16px;
+
+    @include below(md) {
+      flex-direction: column;
+    }
+  }
+
+  &__option {
+    width: 220px;
+
+    @include below(md) {
+      width: 100%;
+    }
+  }
+}

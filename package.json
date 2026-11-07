@@ -1,0 +1,19 @@
+{
+  "name": "kaisen-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "KAISEN — Minecraft MMO-RPG",
+  "scripts": {
+    "build": "sass scss/main.scss css/style.css --style=expanded --no-source-map",
+    "build:min": "sass scss/main.scss css/style.min.css --style=compressed --no-source-map",
+    "watch": "sass scss/main.scss css/style.css --style=expanded --no-source-map --watch",
+    "start": "http-server . -p 8080 -c-1 -o"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "sass": "^1.80.0"
+  },
+  "dependencies": {
+    "skinview3d": "^3.4.2"
+  }
+}

@@ -1,0 +1,52 @@
+@use '../abstracts' as *;
+
+.about {
+  margin-top: 78px;
+
+  &__card {
+    display: flex;
+    justify-content: space-between;
+    gap: 48px;
+    padding: 32px;
+    @include surface-card(6px);
+
+    @include below(xl) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__head {
+    display: flex;
+    flex: 0 0 400px;
+    flex-direction: column;
+    gap: 17px;
+
+    @include below(xl) {
+      flex-basis: 100%;
+    }
+  }
+
+  &__label {
+    @include text(10px, 700, 1.45, $color-red);
+  }
+
+  &__title {
+    @include heading(35px, 1.18);
+  }
+
+  &__text {
+    display: flex;
+    flex: 0 1 736px;
+    flex-direction: column;
+    gap: 18px;
+    line-height: 1.45;
+  }
+
+  &__lead {
+    @include text(19px, 700, 1.45, $color-white);
+  }
+
+  &__paragraph {
+    @include text(14px, 400, 1.45);
+  }
+}

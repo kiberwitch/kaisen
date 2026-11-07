@@ -1,0 +1,79 @@
+@use '../abstracts' as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  height: 52px;
+  padding: 0 24px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font: 700 14px/1.5 $font-body;
+  color: $color-white;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s, border-color 0.15s;
+
+  &--primary {
+    background: $color-red;
+
+    &:hover {
+      background: $color-red-hover;
+    }
+  }
+
+  &--secondary {
+    background: $color-surface;
+    border-color: $color-line;
+
+    &:hover {
+      border-color: $color-muted;
+    }
+  }
+
+  &--outline {
+    background: $color-bg;
+    border-color: $color-line;
+
+    &:hover {
+      border-color: $color-muted;
+    }
+  }
+
+  &--block {
+    width: 100%;
+    height: 46px;
+  }
+
+  &--compact {
+    width: 100%;
+    height: 40px;
+    padding: 0 16px;
+  }
+
+  &--line {
+    justify-content: flex-start;
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    background: transparent;
+    border-color: $color-line;
+    text-align: left;
+
+    &:hover {
+      border-color: $color-muted;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+
+  &--active,
+  &--active:hover {
+    background: $color-red;
+    border-color: $color-red;
+  }
+}

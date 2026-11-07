@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KAISEN — Профиль</title>
+  <meta name="description" content="Личный кабинет KAISEN: профиль игрока, модель персонажа и скин.">
+  <meta name="theme-color" content="#0b0e12">
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <div class="page page--profile">
+    <header class="site-header">
+      <div class="container">
+        <div class="site-header__row">
+          <a class="site-header__logo" href="index.html" aria-label="KAISEN — на главную">
+            <img src="assets/brand/logo.svg" alt="KAISEN" width="170" height="47">
+          </a>
+          <nav class="site-nav" aria-label="Основная навигация">
+            <ul class="site-nav__list">
+            <li><a class="site-nav__link" href="donate.html">Донат</a></li>
+            <li><a class="site-nav__link" href="news.html">Новости</a></li>
+            <li><a class="site-nav__link" href="profile.html" aria-current="page">Профиль</a></li>
+            </ul>
+          </nav>
+          <a class="btn btn--primary site-header__login" href="profile.html">Войти</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main main--profile" id="main">
+      <div class="container">
+        <header class="page-head page-head--profile">
+          <p class="eyebrow">ЛИЧНЫЙ КАБИНЕТ</p>
+          <h1 class="page-head__title">ТВОЙ ПЕРСОНАЖ</h1>
+        </header>
+
+        <div class="profile">
+          <div class="profile__aside">
+            <section class="profile-card" aria-label="Аккаунт">
+              <div class="user">
+                <div class="user__avatar" role="img" aria-label="Аватар (заглушка)"></div>
+                <div>
+                  <p class="user__name">KaisenPlayer</p>
+                  <p class="user__role">Игрок</p>
+                </div>
+              </div>
+              <div class="profile-card__divider"></div>
+              <dl class="stats">
+                <div class="stats__item"><dt class="stats__label">В игре</dt><dd class="stats__value">128 ч</dd></div>
+                <div class="stats__item"><dt class="stats__label">Дата регистрации</dt><dd class="stats__value">12.05.2025</dd></div>
+              </dl>
+              <div class="profile-card__divider"></div>
+              <a class="btn btn--line" href="index.html">Выйти из аккаунта</a>
+            </section>
+
+            <section class="profile-card" aria-labelledby="look-title">
+              <div class="profile-card__heading">
+                <h2 class="profile-card__title" id="look-title">Внешний вид</h2>
+                <p class="profile-card__subtitle" id="model-label">Модель персонажа</p>
+              </div>
+              <div class="profile-card__options" role="radiogroup" aria-labelledby="model-label">
+                <label class="radio">
+                  <input class="radio__input" type="radio" name="model" value="steve" checked data-model-radio>
+                  <span class="radio__dot"></span>
+                  <span class="radio__text"><span class="radio__title">Стив</span><span class="radio__desc">Обычная модель</span></span>
+                </label>
+                <label class="radio">
+                  <input class="radio__input" type="radio" name="model" value="alex" data-model-radio>
+                  <span class="radio__dot"></span>
+                  <span class="radio__text"><span class="radio__title">Алекс</span><span class="radio__desc">Тонкие руки</span></span>
+                </label>
+              </div>
+              <div class="profile-card__skin">
+                <button type="button" class="btn btn--line" data-modal-open="modal-skin" aria-haspopup="dialog">Сменить скин</button>
+                <p class="profile-card__hint">Модель и скин отображаются в предпросмотре справа</p>
+              </div>
+            </section>
+          </div>
+
+          <section class="preview" aria-labelledby="preview-title">
+            <h2 class="preview__title" id="preview-title">Ваш персонаж</h2>
+            <div class="preview__stage" data-skin-stage>
+              <canvas class="preview__canvas" data-skin-canvas role="img" aria-label="3D-предпросмотр персонажа"></canvas>
+              <p class="preview__status" data-skin-status role="status">Загрузка модели…</p>
+            </div>
+            <p class="preview__hint">Перетаскивайте, чтобы вращать</p>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__inner">
+          <div class="site-footer__brand">
+            <a class="site-footer__logo" href="index.html" aria-label="KAISEN — на главную">
+              <img src="assets/brand/logo.svg" alt="KAISEN" width="170" height="47">
+            </a>
+            <p class="site-footer__tagline">Minecraft MMO-RPG<br>Япония по ту сторону будущего.</p>
+            <p class="site-footer__copy">© 2026 KAISEN</p>
+          </div>
+
+          <nav class="site-footer__group" aria-labelledby="footer-project">
+            <h2 class="site-footer__title" id="footer-project">Проект</h2>
+            <ul class="site-footer__list">
+              <li><a class="site-footer__link" href="index.html">Главная</a></li>
+              <li><a class="site-footer__link" href="donate.html">Донат</a></li>
+              <li><a class="site-footer__link" href="play.html">Начать играть</a></li>
+            </ul>
+          </nav>
+
+          <nav class="site-footer__group" aria-labelledby="footer-community">
+            <h2 class="site-footer__title" id="footer-community">Сообщество</h2>
+            <ul class="site-footer__list">
+              <li><a class="site-footer__link" href="https://discord.com" target="_blank" rel="noopener noreferrer">Discord</a></li>
+              <li><a class="site-footer__link" href="rules.html">Правила</a></li>
+            </ul>
+          </nav>
+
+          <nav class="site-footer__group" aria-labelledby="footer-info">
+            <h2 class="site-footer__title" id="footer-info">Информация</h2>
+            <ul class="site-footer__list">
+              <li><a class="site-footer__link" href="privacy.html">Конфиденциальность</a></li>
+              <li><a class="site-footer__link" href="terms.html">Пользовательское соглашение</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <dialog class="modal modal--skin" id="modal-skin" aria-labelledby="skin-title">
+    <div class="modal__body">
+      <div class="modal__head">
+        <h2 class="modal__title" id="skin-title">СМЕНИТЬ СКИН</h2>
+        <button type="button" class="modal__close" data-modal-close aria-label="Закрыть">×</button>
+      </div>
+      <p class="modal__subtitle">Загрузи PNG и выбери модель, под которую он создан.</p>
+
+      <div class="dropzone" data-skin-zone>
+        <p class="dropzone__title">Перетащи PNG сюда</p>
+        <p class="dropzone__or">или</p>
+        <button type="button" class="btn btn--secondary btn--compact dropzone__pick" data-skin-pick>Выбрать файл</button>
+        <input type="file" accept="image/png" hidden data-skin-input>
+        <p class="dropzone__file" data-skin-file hidden></p>
+        <p class="dropzone__error" data-skin-error role="alert" hidden></p>
+      </div>
+
+      <div class="model-switch" role="group" aria-labelledby="model-switch-label">
+        <p class="model-switch__label" id="model-switch-label">Модель персонажа</p>
+        <div class="model-switch__row">
+          <button type="button" class="btn btn--secondary btn--compact model-switch__option btn--active" aria-pressed="true" data-skin-model="steve">Стив · обычные руки</button>
+          <button type="button" class="btn btn--secondary btn--compact model-switch__option" aria-pressed="false" data-skin-model="alex">Алекс · тонкие руки</button>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn--primary modal__submit" data-skin-save disabled>Сохранить скин</button>
+    </div>
+  </dialog>
+  <script src="js/vendor/skinview3d.bundle.js" defer></script>
+  <script src="js/config.js" defer></script>
+  <script src="js/skin-viewer.js" defer></script>
+  <script src="js/modal.js" defer></script>
+  <script src="js/skin.js" defer></script>
+</body>
+</html>

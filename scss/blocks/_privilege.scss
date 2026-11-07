@@ -1,0 +1,176 @@
+@use '../abstracts' as *;
+
+.privilege {
+  padding: 19px 31px 43px;
+
+  @include below(sm) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__caption {
+    margin-top: 4px;
+    @include text(11px, 700, 1.45, $color-muted);
+    text-transform: uppercase;
+  }
+
+  &__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9.6px;
+    margin-top: 11px;
+  }
+
+  &__tab {
+    flex: none;
+    width: 140px;
+    height: 42px;
+    padding: 0;
+
+    @include below(md) {
+      flex: 1 1 120px;
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 252px minmax(0, 1fr);
+    gap: 32px;
+    align-items: start;
+    margin-top: 31px;
+
+    @include below(md) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__side {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+  }
+
+  &__art {
+    --privilege-tint: #{rgba(139, 111, 111, 0.25)};
+    position: relative;
+    height: 414px;
+    overflow: hidden;
+    border-radius: 6px;
+    background: linear-gradient(180deg, var(--privilege-tint), $color-bg);
+
+    @include below(md) {
+      height: 320px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    left: 3.5px;
+    top: 26px;
+    width: 245px;
+    height: 332px;
+    background: transparent;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    @include below(md) {
+      left: 50%;
+      top: 16px;
+      height: 250px;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__index {
+    position: absolute;
+    left: 20px;
+    top: 379px;
+    @include text(10px, 700, 1.45, $color-muted);
+
+    @include below(md) {
+      top: 290px;
+    }
+  }
+
+  &__main {
+    min-width: 0;
+  }
+
+  &__title {
+    margin-top: -1px;
+    @include heading(32px, 1.18);
+  }
+
+  &__price {
+    margin-top: 13px;
+    @include text(18px, 700, 1.45, $color-white);
+  }
+
+  &__section {
+    margin-top: 28px;
+    @include text(11px, 700, 1.45, $color-muted);
+    text-transform: uppercase;
+
+    &--features {
+      margin-top: 32px;
+    }
+  }
+
+  &__desc {
+    margin-top: 10px;
+    @include text(14px, 400, 1.45);
+  }
+
+  &__features {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-top: 14px;
+  }
+
+  &__feature {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    height: 42px;
+    padding: 0 14px;
+    background: $color-bg;
+    border-radius: 4px;
+    @include text(12px, 500, 1.45);
+    white-space: nowrap;
+
+    &::before {
+      content: '—';
+      font: 400 13px/1 $font-body;
+      color: $color-muted;
+    }
+
+    @include below(md) {
+      height: auto;
+      min-height: 42px;
+      padding: 10px 14px;
+      white-space: normal;
+    }
+  }
+
+  &__buy {
+    width: 100%;
+    height: 48px;
+    margin-top: 37px;
+  }
+
+  &__note {
+    margin-top: 16px;
+    @include text(11px, 400, 1.45, $color-muted);
+  }
+}

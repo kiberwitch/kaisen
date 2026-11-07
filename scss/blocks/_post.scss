@@ -1,0 +1,54 @@
+@use '../abstracts' as *;
+
+.post {
+  max-width: 820px;
+
+  &__back {
+    display: inline-block;
+    margin-bottom: 32px;
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__date {
+    @include text(12px, 400, 1.45);
+  }
+
+  &__title {
+    margin-top: 16px;
+    @include heading(48px, 1.18);
+    text-transform: none;
+
+    @include below(sm) {
+      font-size: 34px;
+    }
+  }
+
+  &__lead {
+    margin-top: 16px;
+    @include text(16px, 400, 1.45);
+  }
+
+  &__cover {
+    height: 360px;
+    margin-top: 32px;
+    border: 1px solid $color-surface;
+    border-radius: 8px;
+
+    @include below(sm) {
+      height: 220px;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 32px;
+    @include text(15px, 400, 1.6);
+  }
+}

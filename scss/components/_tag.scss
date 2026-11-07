@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  background: $color-red;
+  border-radius: 4px;
+  font: 700 8px/1.5 $font-body;
+  color: $color-white;
+  white-space: nowrap;
+
+  &--lg {
+    font-size: 12px;
+  }
+}
